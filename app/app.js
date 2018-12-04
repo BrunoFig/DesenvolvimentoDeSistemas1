@@ -2,5 +2,6 @@
 
 angular.module("ChegaMais", [
     "ngMessages",
-    "ChegaMais.host"
+    "ChegaMais.host",
+    "ChegaMais.backendService"
 ]);

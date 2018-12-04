@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ChegaMais.host', [])
-    .controller('hostCtrl', function($scope, $http) {
+    .controller('hostCtrl', function($scope, $http, subscribeBackendService) {
 
         // Scope Variables
         $scope.hosts = [];
@@ -9,18 +9,14 @@ angular.module('ChegaMais.host', [])
 
         // Controller Local Functions
         var loadHosts = function(){
-            $http.get("http://localhost:3000/hosts").then(function (res){
-                $scope.hosts = res.data;
-            }).catch(function (){
-                $scope.message = "Error: " + data;
+            subscribeBackendService.getAllHosts().then(function(response){
+                $scope.hosts = response;
             });
         };
 
         var loadCities = function(){
-            $http.get("http://localhost:3000/cities").then(function (res){
-                $scope.cities = res.data;
-            }).catch(function (){
-                $scope.message = "Error: " + data;
+            subscribeBackendService.getAllCities().then(function(response){
+                $scope.cities = response;
             });
         };
 

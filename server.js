@@ -34,11 +34,11 @@ var cities = [
 
 // Routes
 //=================
-app.get('/hosts', function(req, res) {
+app.get('/backend/hosts', function(req, res) {
     res.json(hosts);
 });
 
-app.get('/cities', function(req, res) {
+app.get('/backend/cities', function(req, res) {
     res.json(cities);
 });
 
