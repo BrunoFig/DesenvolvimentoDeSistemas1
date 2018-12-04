@@ -1,3 +1,6 @@
 'use strict';
 
-var app = angular.module("ChegaMais", []);
+angular.module("ChegaMais", [
+    "ngMessages",
+    "ChegaMais.host"
+]);
