@@ -37,18 +37,16 @@ var cities = [
 app.get('/backend/hosts', function(req, res) {
     res.json(hosts);
 });
-
 app.get('/backend/cities', function(req, res) {
     res.json(cities);
 });
-
 app.get('/', function (req, res) {
     res.sendfile('app/index.html');
  })
 
 // Serve
 //=================
- var port = process.env.PORT|| 3000;
- // listen (start app with node server.js)
- app.listen(port);
- console.log("App listening on port " + port);
+var port = process.env.PORT|| 3000;
+// listen (start app with node server.js)
+app.listen(port);
+console.log("App listening on port " + port);
