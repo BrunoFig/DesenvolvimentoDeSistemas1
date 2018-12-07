@@ -23,7 +23,7 @@ Abaixo está a lista de Tecnologias e Frameworks utilizados no projeto:
 
 <br><br>
 
-## 
+## Estudo Sobre o Airbnb
 
 Para o desenvolvimento da aplicação foi realizado um estudo sobre o [Airbnb](https://airbnb.com.br), seu modelo de negócios, as estruturas utilizadas por ele e seus casos de uso. O modelo de negócios da aplicação estudada pode ser resumida na facilitação da interação entre indivíduos que tem possuem uma acomodação disponível e aqueles de desejam uma de forma fácil, rápida e sem burocracia, esse plano é representado na imagem abaixo:
 
@@ -57,6 +57,30 @@ No caso do backend o único diretório que há é o `node_modules`, que contém 
 
 
 >**NOTA:** É importante lembrar que está estrutura pode ser alterada no decorrer do projeto.
+
+<br><br>
+
+## Projeto
+
+### "Classes"
+
+A aplicação conta com 8 "classes", ou 8 coleções (MongoDB), sendo elas:
+
+1. `Users`: o registro dos usuários da aplicação.
+2. `Hosts`: o registro das residências disponívies para acomodação.
+3. `Reservations`: o registro das reservas das acomodações, tanto das publicadas quanto das já ocupadas.
+4. `Categories`: o registro das categorias das residências (casa, apartamento, alojamento, etc).
+5. `Host Types`: o registro dos tipos de alocação (cama de solteiro, cama de casal, sofa cama, camping, etc).
+6. `Items`: o registro dos itens de uma residência (televisão, número de banheiros, video games, wi-fi, piscina, etc).
+7. `Cities`: o registro das cidades em que a aplicação está disponível.
+8. `States` o registro dos estados em que a aplicação está disponível.
+
+### Rodando o Projeto localmente
+
+Para testar a aplicação localmente é necessário executar dois projetos simultaneamente, a API de integração com o banco de dados localizada no diretório `api` e o frontend que é o resto do repositório. Para executar cada um dos projetos, basta utilizar os seguintes comandos:
+
+    npm install
+    npm start
 
 <br><br>
 
