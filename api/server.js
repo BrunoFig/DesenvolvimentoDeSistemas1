@@ -28,43 +28,10 @@ mongoose.connect(MONGO_ACCESS).then(
      console.log("err",err);
 }
 );
-var Schema = mongoose.Schema; 
-var Float = require('mongoose-float').loadType(mongoose);
-var listauPizzaDataSchema = new Schema({
-  input: String,
-  output:String,
-  messages: String,
-  context: {} ,  // para poder aceitar um array com informacoes dentro dele 
-  _id : {},
-  name : String,
-  valor : String,
-  ingredientes : String,
-}, {collection: 'infopizza'});
 
-
-app.post('/pizzaconsulta', (req, res) =>{
-
-	// console.log(req.body)
-  var consulta = {
-	context: req.body
-  }
- console.log(consulta)
-var usersConsultaPizzaDb = mongoose.model('usersConsultaPizzaDb', listauPizzaDataSchema);
-var usersConsultaObj ={}
-	usersConsultaPizzaDb.find({ "context.senderID": consulta.context.senderID })
-		.then(function(usersConsultaObj) { 
-		  
-		  console.log("#### Lista de pizzas que existem  #####")
-			   console.log(usersConsultaObj)
-			
-			res.send(usersConsultaObj) 
-		  console.log('#### Lista de pizzas que existem  #####')
-		 
-		
-  });
-});
-
-// ## Criação dos Schemas
+// # Criação dos Schemas
+//===========================================================
+//===========================================================
 var Schema = mongoose.Schema; 
 var Float = require('mongoose-float').loadType(mongoose);
 var ObjectId = mongoose.Schema.Types.ObjectId;
@@ -141,11 +108,33 @@ var reservationsSchema = new Schema({
     description: String
   }, {collection: 'reservations'});
 
+// # Chamada de api Post para cadastrar o pedido enviado
+//===========================================================
+//===========================================================
 
-/// ## Modelo de estrutura da colecao Pedidos ####///
+//                         GET Resquests
+//===========================================================
+app.get('/hosts', (req, res) =>{
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+var hostsDb = mongoose.model('hostsDb', hostsSchema);
+hostsDb.find({})
+		.then(function(hostsConsultObj) { 
+		  
+		  console.log("#### List of All Hosts  #####")
+			   console.log(hostsConsultObj)
+			
+			res.send(hostsConsultObj) 
+		  console.log('#### List of All Hosts  #####')
+  });
+});
 
+//                         POST Resquests
+//===========================================================
 
-// Chamada de api Post para cadastrar o pedido enviado
 app.post('/states', (req, res) =>{
 	let infoRaw= req.body.data
   console.log(infoRaw)
@@ -347,7 +336,7 @@ app.post('/reservations', (req, res) =>{
 	}
 		var reservationsDb = mongoose.model('reservationsDb',  reservationsSchema);
 		reservationsDb
-				.findOneAndUpdate({ "adress": infoRaw.email },
+				.findOneAndUpdate({ "host": infoRaw.email },
 					{  $set: {
                 'host': data.info.host,
                 'daysAvailable': data.info.daysAvailable,
@@ -364,16 +353,4 @@ app.post('/reservations', (req, res) =>{
 							console.log(result)
 							res.send("Reservations Updated") // Se tudo certo devolver esse cara
 					});
-});
-// Chamada de api Post para cadastrar o pedido enviado
-
-// ROUTES
-app.get('/teste', function(req, res) {
-	console.log("huhuhuuhu Deu certo  o teste");
-	res.send({
- 				"messages": [
-   								 {"text": "Servidor storage"}
-									
- 							]
-			})
 });
