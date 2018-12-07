@@ -14,11 +14,6 @@ angular.module('ChegaMais.user', ['ngRoute'])
                 $scope.users = response;
             });
         };
-        var loadCities = function(){
-            subscribeBackendService.getAllCities().then(function(response){
-                $scope.cities = response;
-            });
-        };
 
         // Controller Scope Functions
         //==============================

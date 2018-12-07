@@ -60,7 +60,8 @@
                 <input type="text" ng-model="newHost.name" ng-required="true" name="name" placeholder="Nome" class="form-control"/>
             </div>
             <div>
-                <select ng-model="newHost.category" ng-options="category.id as category.name for category in cities" ng-required="true" name="category" class="form-control">
+                <label>Categoria</label>
+                <select ng-model="newHost.category" ng-options="category.id as category.name for category in categories" ng-required="true" name="category" class="form-control">
                     <option value="">Selecione uma Categoria</option>
                 </select>
             </div>

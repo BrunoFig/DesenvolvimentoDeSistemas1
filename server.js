@@ -43,6 +43,10 @@ app.get('/backend/cities', function(req, res) {
 app.get('/', function (req, res) {
     res.sendfile('app/index.html');
  })
+ app.get('/home', function (req, res) {
+    res.sendfile('app/view/home.html');
+ })
+
 
 // Serve
 //=================
