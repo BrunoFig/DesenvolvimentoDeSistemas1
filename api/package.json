@@ -1,0 +1,17 @@
+{
+  "name": "mangodb-api",
+  "version": "1.0.0",
+  "description": "API REST para acessar o banco de dados na cloud (MongoDB)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexandre Dutra e Bruno Figueiredo",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.15",
+    "request-promise": "^4.2.2"
+  }
+}

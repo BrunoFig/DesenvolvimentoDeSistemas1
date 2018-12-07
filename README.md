@@ -37,7 +37,7 @@ No caso do backend o único diretório que há é o `node_modules`, que contém 
 
 # Links Importantes
 *****
-
+* [Tutorial MongoDB](https://mongodbwise.wordpress.com/2014/05/22/mongodb-guia-rapido/).
 * [Tutorial AngularJS](https://www.youtube.com/playlist?list=PLQCmSnNFVYnTD5p2fR4EXmtlR6jQJMbPb).
 * [Tutorial Node.js - Express Framework](https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm).
 * [Git Flow](https://nvie.com/posts/a-successful-git-branching-model/).
