@@ -16,7 +16,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest --coverage",
     "start": "node server.js"
   },
   "repository": {
