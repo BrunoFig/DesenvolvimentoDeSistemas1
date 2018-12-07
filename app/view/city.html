@@ -1,0 +1,41 @@
+<div ng-controller="cityCtrl" class="jumbotron">
+        <h3>Table</h3>
+        <table class="table-striped">
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Estado</th>
+                <th>Sigla Estado</th>
+            </tr>
+            <tr ng-repeat="city in cities">
+                <td><input type="checkbox" ng-model="city.selected"/></td>
+                <td>{{city.name}}</td>
+                <td>{{city.state}}</td>
+                <td>{{city.stateInitials}}</td>
+            </tr>
+        </table>
+        <h3>Form</h3>
+        <form name="cityForm">
+            <div class="alert alert-danger" ng-show="cityForm.name.$invalid && cityForm.name.$dirty">
+                Por favor, digite um Nome.
+            </div>
+            <div class="alert alert-danger" ng-show="cityForm.state.$invalid && cityForm.state.$dirty">
+                Por favor, selecione um Estado.
+            </div>
+
+            <!-- INPUTs -->
+            <!-- ============================= -->
+            <div>
+                <label>Nome: </label>
+                <input type="text" ng-model="newCity.name" ng-required="true" name="name" placeholder="Nome" class="form-control"/>
+                <label>Estado: </label>
+                <select ng-model="newCity.stateObj" ng-options="state as state.name for state in states" ng-required="true" name="state" class="form-control">
+                    <option value="">Selecione um Estado</option>
+                </select>    
+            </div>
+            
+        </form>
+        <button ng-click="addCity(newCity)" ng-disabled="cityForm.$invalid" class="btn btn-primary">Adicionar City</button>
+        <button ng-click="deleteCity(cities)" ng-disabled="isCitiesSelected(cities)" class="btn btn-danger">Deletar City</button>
+        {{newCity}}
+    </div>

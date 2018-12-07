@@ -1,0 +1,90 @@
+<div ng-controller="userCtrl" class="jumbotron">
+        <h3>Table</h3>
+        <table class="table-striped">
+            <tr>
+                <th></th>
+                <th>E-mail</th>
+                <th>Primeiro Nome</th>
+                <th>Último Nome</th>
+                <th>Admin</th>
+                <th>Senha</th>
+                <th>Data de Nascimento</th>
+                <th>Telefone</th>
+                <th>Sexo</th>
+                <th>Descrição</th>
+            </tr>
+            <tr ng-repeat="user in users">
+                <td><input type="checkbox" ng-model="user.selected"/></td>
+                <td>{{user.email}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.admin}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.dateBirth}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.sex}}</td>
+                <td>{{user.description}}</td>
+            </tr>
+        </table>
+        <h3>Form</h3>
+        <form name="userForm">
+            <div class="alert alert-danger" ng-show="userForm.firstName.$invalid && userForm.firstName.$dirty">
+                Por favor, digite um Primeiro Nome.
+            </div>
+            <div class="alert alert-danger" ng-show="userForm.lastName.$invalid && userForm.lastName.$dirty">
+                Por favor, selecione uma Último Nome.
+            </div>
+            <div class="alert alert-danger" ng-show="userForm.email.$invalid && userForm.email.$dirty">
+                Por favor, digite um E-mail.
+            </div>
+            <div class="alert alert-danger" ng-show="userForm.password.$invalid && userForm.password.$dirty">
+                Por favor, digite uma Senha.
+            </div>
+            <div class="alert alert-danger" ng-show="userForm.dateBirth.$invalid && userForm.dateBirth.$dirty">
+                Por favor, digite uma Data de Nascimento.
+            </div>
+
+            <!-- INPUTs -->
+            <!-- ============================= -->
+            <div>
+                <label>Primeiro Nome: </label>
+                <input type="text" ng-model="newUser.firstName" ng-required="true" name="firstName" placeholder="Primeiro Nome" class="form-control"/>
+                <label>Último Nome: </label>
+                <input type="text" ng-model="newUser.lastName" ng-required="true" name="lastName" placeholder="Último Nome" class="form-control"/>
+            </div>
+            <div>
+                <label>E-mail: </label>
+                <input type="text" ng-model="newUser.email" ng-required="true" name="email" placeholder="E-mail" class="form-control"/>
+                <label>Admin: </label>
+                <input type="checkbox" ng-model="newUser.admin"/>
+            </div>
+            <div>
+                <label>Senha: </label>
+                <input type="text" ng-model="newUser.password" ng-required="true" name="password" placeholder="Senha" class="form-control"/>
+            </div>
+            <div>
+                <label>Data Nascimento: </label>
+                <input type="date" ng-model="newUser.dateBirth" ng-required="true" name="dateBirth" placeholder="Data de Nascimento" class="form-control"/>
+            </div>
+            <div>
+                <label>Telefone: </label>
+                <input type="number" ng-model="newUser.number" name="number" placeholder="Telefone" class="form-control"/>
+            </div>
+            <div>
+                <label>Descrição: </label>
+                <input type="text" ng-model="newUser.description" name="description" placeholder="Descrição ..." class="form-control"/>
+            </div>
+
+            <div>
+                <label>Sexo: </label>
+                <select ng-model="newUser.sex" name="sex" class="form-control">
+                    <option value="">Selecione um Sexo</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                </select>
+            </div>
+        </form>
+        <button ng-click="addUser(newUser)" ng-disabled="userForm.$invalid" class="btn btn-primary">Adicionar User</button>
+        <button ng-click="deleteUser(users)" ng-disabled="isUsersSelected(users)" class="btn btn-danger">Deletar User</button>
+        {{newUser}}
+    </div>

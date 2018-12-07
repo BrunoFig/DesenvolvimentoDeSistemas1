@@ -1,0 +1,37 @@
+<div ng-controller="stateCtrl" class="jumbotron">
+        <h3>Table</h3>
+        <table class="table-striped">
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Sigla</th>
+            </tr>
+            <tr ng-repeat="state in states">
+                <td><input type="checkbox" ng-model="state.selected"/></td>
+                <td>{{state.name}}</td>
+                <td>{{state.initials}}</td>
+            </tr>
+        </table>
+        <h3>Form</h3>
+        <form name="stateForm">
+            <div class="alert alert-danger" ng-show="stateForm.name.$invalid && stateForm.name.$dirty">
+                Por favor, digite um Nome.
+            </div>
+            <div class="alert alert-danger" ng-show="stateForm.initials.$invalid && stateForm.initials.$dirty">
+                Por favor, selecione uma Sigla.
+            </div>
+
+            <!-- INPUTs -->
+            <!-- ============================= -->
+            <div>
+                <label>Nome: </label>
+                <input type="text" ng-model="newState.name" ng-required="true" name="name" placeholder="Nome" class="form-control"/>
+                <label>Sigla: </label>
+                <input type="text" ng-model="newState.initials" ng-required="true" name="initials" placeholder="Sigle" class="form-control"/>
+            </div>
+            
+        </form>
+        <button ng-click="addState(newState)" ng-disabled="stateForm.$invalid" class="btn btn-primary">Adicionar State</button>
+        <button ng-click="deleteState(states)" ng-disabled="isStatesSelected(states)" class="btn btn-danger">Deletar State</button>
+        {{newState}}
+    </div>

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ChegaMais.host', [])
+angular.module('ChegaMais.host', ['ngRoute'])
     .controller('hostCtrl', function($scope, subscribeBackendService) {
 
         // Scope Variables

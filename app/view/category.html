@@ -1,0 +1,36 @@
+<div ng-controller="categoryCtrl" class="jumbotron">
+        <h3>Table</h3>
+        <table class="table-striped">
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Descrição</th>
+            </tr>
+            <tr ng-repeat="category in categories">
+                <td><input type="checkbox" ng-model="category.selected"/></td>
+                <td>{{category.name}}</td>
+                <td>{{category.description}}</td>
+            </tr>
+        </table>
+        <h3>Form</h3>
+        <form name="categoryForm">
+            <div class="alert alert-danger" ng-show="categoryForm.name.$invalid && categoryForm.name.$dirty">
+                Por favor, digite um Nome.
+            </div>
+
+            <!-- INPUTs -->
+            <!-- ============================= -->
+            <div>
+                <label>Nome: </label>
+                <input type="text" ng-model="newCategorie.name" ng-required="true" name="name" placeholder="Nome" class="form-control"/>
+            </div>
+            <div>
+                <label>Descrição: </label>
+                <input type="text" ng-model="newCategorie.description" name="description" placeholder="Descrição ..." class="form-control"/>
+            </div>
+            
+        </form>
+        <button ng-click="addCategorie(newCategorie)" ng-disabled="categoryForm.$invalid" class="btn btn-primary">Adicionar Categorie</button>
+        <button ng-click="deleteCategorie(categories)" ng-disabled="isCategoriesSelected(categories)" class="btn btn-danger">Deletar Categorie</button>
+        {{newCategorie}}
+    </div>

@@ -46,7 +46,7 @@ app.get('/', function (req, res) {
 
 // Serve
 //=================
-var port = process.env.PORT|| 3000;
+var port = process.env.PORT|| 8080;
 // listen (start app with node server.js)
 app.listen(port);
 console.log("App listening on port " + port);

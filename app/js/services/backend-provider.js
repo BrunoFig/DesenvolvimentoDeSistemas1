@@ -13,8 +13,8 @@ angular.module('ChegaMais.backendService', [])
         var backend = link + port;
 
         var endpoints = {
-            hosts: backend + "/backend/hosts",
-            cities: backend + "/backend/cities",
+            hosts: backend + "/hosts",
+            cities: backend + "/cities",
         };
 
         return {
