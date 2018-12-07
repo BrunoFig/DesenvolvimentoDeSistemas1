@@ -138,7 +138,6 @@ var reservationsSchema = new Schema({
         dayPrice: {type: Float, required: true},
         hostType: {type: String, required: true}
         },
-    dayprice: {type: Float, required: true},
     description: String
   }, {collection: 'reservations'});
 
@@ -323,12 +322,7 @@ app.post('/hosts', (req, res) =>{
                 'title': data.info.title,
                 'category': data.info.category,
                 'owner': data.info.owner,
-                'adress.state': data.info.adress.state,
-                'adress.city': data.info.adress.city,
-                'adress.street': data.info.adress.street,
-                'adress.number': data.info.adress.number,
-                'adress.zipCode': data.info.adress.zipCode,
-                'adress.complement': data.info.adress.complement,
+                'adress': data.info.adress,
                 'description': data.info.description,
                 'items': data.info.items,
 					   }
@@ -341,6 +335,34 @@ app.post('/hosts', (req, res) =>{
 							console.log("#### Hosts Updated #####" )
 							console.log(result)
 							res.send("Hosts Updated") // Se tudo certo devolver esse cara
+					});
+});
+
+app.post('/reservations', (req, res) =>{
+	let infoRaw= req.body.data
+  console.log(infoRaw)
+
+	let data ={
+		info:infoRaw  // Montando estrutura que sera salva
+	}
+		var reservationsDb = mongoose.model('reservationsDb',  reservationsSchema);
+		reservationsDb
+				.findOneAndUpdate({ "adress": infoRaw.email },
+					{  $set: {
+                'host': data.info.host,
+                'daysAvailable': data.info.daysAvailable,
+                'daysUnavailable': data.info.daysUnavailable,
+                'description': data.info.description,
+					   }
+					},
+					{ upsert: true },
+					function(err, result) {
+						if (err) res.send(err);  /// Em caso de erro enviar o erro na api para Verificar
+					     console.log(err) 
+							
+							console.log("#### Reservations Updated #####" )
+							console.log(result)
+							res.send("Reservations Updated") // Se tudo certo devolver esse cara
 					});
 });
 // Chamada de api Post para cadastrar o pedido enviado
