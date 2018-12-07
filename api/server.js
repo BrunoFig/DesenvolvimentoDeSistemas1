@@ -262,7 +262,6 @@ reservationsDb.find({})
 
 //                         POST Resquests
 //===========================================================
-
 app.post('/states', (req, res) =>{
 	let infoRaw= req.body.data
   console.log(infoRaw)
@@ -456,8 +455,8 @@ app.post('/hosts', (req, res) =>{
 });
 
 app.post('/reservations', (req, res) =>{
-	let infoRaw= req.body.data
-  console.log(infoRaw)
+	let infoRaw= req.body.data;
+  console.log(infoRaw);
 
 	let data ={
 		info:infoRaw  // Montando estrutura que sera salva
@@ -486,3 +485,23 @@ app.post('/reservations', (req, res) =>{
 //                         DELETE Resquests
 //===========================================================
 
+app.delete('/hosts/:id', (req, res) =>{
+	let infoRaw= req.params.id;
+  console.log(infoRaw)
+
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+	var hostsDb = mongoose.model('hostsDb', hostsSchema);
+	hostsDb.findOneAndDelete({"_id": infoRaw})
+		.then(function(hostsDeleteObj) { 
+		  
+		  console.log("####  Host Deleted  #####")
+			   console.log(hostsDeleteObj)
+			
+			res.send(hostsDeleteObj) 
+		  console.log('####  Host Deleted  #####')
+	});
+});

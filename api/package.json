@@ -1,5 +1,5 @@
 {
-  "name": "mangodb-api",
+  "name": "mongodb-api",
   "version": "1.0.0",
   "description": "API REST para acessar o banco de dados na cloud (MongoDB)",
   "main": "index.js",
