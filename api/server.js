@@ -132,6 +132,134 @@ hostsDb.find({})
   });
 });
 
+app.get('/users', (req, res) =>{
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+var usersDb = mongoose.model('usersDb', usersSchema);
+usersDb.find({})
+		.then(function(usersConsultObj) { 
+		  
+		  console.log("#### List of All Users  #####")
+			   console.log(usersConsultObj)
+			
+			res.send(usersConsultObj) 
+		  console.log('#### List of All Users  #####')
+  });
+});
+
+app.get('/states', (req, res) =>{
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+var statesDb = mongoose.model('statesDb', statesSchema);
+statesDb.find({})
+		.then(function(statesConsultObj) { 
+		  
+		  console.log("#### List of All States  #####")
+			   console.log(statesConsultObj)
+			
+			res.send(statesConsultObj) 
+		  console.log('#### List of All States  #####')
+  });
+});
+
+app.get('/cities', (req, res) =>{
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+var citiesDb = mongoose.model('citiesDb', citiesSchema);
+citiesDb.find({})
+		.then(function(citiesConsultObj) { 
+		  
+		  console.log("#### List of All Cities  #####")
+			   console.log(citiesConsultObj)
+			
+			res.send(citiesConsultObj) 
+		  console.log('#### List of All Cities  #####')
+  });
+});
+
+app.get('/items', (req, res) =>{
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+var itemsDb = mongoose.model('itemsDb', itemsSchema);
+itemsDb.find({})
+		.then(function(itemsConsultObj) { 
+		  
+		  console.log("#### List of All Items  #####")
+			   console.log(itemsConsultObj)
+			
+			res.send(itemsConsultObj) 
+		  console.log('#### List of All Items  #####')
+  });
+});
+
+app.get('/hostTypes', (req, res) =>{
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+var hostTypesDb = mongoose.model('hostTypesDb', hostTypesSchema);
+hostTypesDb.find({})
+		.then(function(hostTypesConsultObj) { 
+		  
+		  console.log("#### List of All HostTypes  #####")
+			   console.log(hostTypesConsultObj)
+			
+			res.send(hostTypesConsultObj) 
+		  console.log('#### List of All HostTypes  #####')
+  });
+});
+
+
+app.get('/categories', (req, res) =>{
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+var categoriesDb = mongoose.model('categoriesDb', categoriesSchema);
+categoriesDb.find({})
+		.then(function(categoriesConsultObj) { 
+		  
+		  console.log("#### List of All categories  #####")
+			   console.log(categoriesConsultObj)
+			
+			res.send(categoriesConsultObj) 
+		  console.log('#### List of All categories  #####')
+  });
+});
+
+
+app.get('/reservations', (req, res) =>{
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+var reservationsDb = mongoose.model('reservationsDb', reservationsSchema);
+reservationsDb.find({})
+		.then(function(reservationsConsultObj) { 
+		  
+		  console.log("#### List of All Items  #####")
+			   console.log(reservationsConsultObj)
+			
+			res.send(reservationsConsultObj) 
+		  console.log('#### List of All Items  #####')
+  });
+});
+
 //                         POST Resquests
 //===========================================================
 
