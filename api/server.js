@@ -482,3 +482,7 @@ app.post('/reservations', (req, res) =>{
 							res.send("Reservations Updated") // Se tudo certo devolver esse cara
 					});
 });
+
+//                         DELETE Resquests
+//===========================================================
+

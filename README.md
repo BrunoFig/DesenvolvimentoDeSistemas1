@@ -3,6 +3,12 @@ Trabalho da disciplina de Metodologia de Desenvolvimento de Sistemas 1.
 
 <br><br>
 
+# Descrição do projeto
+*****
+
+O Sistema Chega Mais é uma aplicação web que visa oferecer serviços de hospedagem aos seus usuários. É focado no público universitário, que muitas vezes busca serviços de hospedagem informal e de baixo custo em curtos períodos, seja para congressos ou para jogos universitários. Um usuário pode ser tanto host quanto client, isto é, ele pode buscar hospedagem quando precisar, e pode também oferecer vaga em sua residência, seja ela um apartamento, uma república, ou mesmo um alojamento de jogos universitários.
+
+
 # Tecnologias e Frameworks
 *****
 
@@ -11,8 +17,7 @@ Trabalho da disciplina de Metodologia de Desenvolvimento de Sistemas 1.
 3. Extensão Node.js: [Express.js](https://expressjs.com/pt-br/).
 4. Controle de Versão: [Git](https://git-scm.com/).
 5. Hospedagem do Código Fonte: [GitHub](https://github.com/).
-6. Automatização de Testes: [Mocha](https://mochajs.org/).
-7. Plataforma Cloud: [Heroku](https://www.heroku.com/).
+6. Plataforma Cloud: [Heroku](https://www.heroku.com/).
 
 <br><br>
 
