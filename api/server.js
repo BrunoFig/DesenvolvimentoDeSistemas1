@@ -67,6 +67,7 @@ var usersConsultaObj ={}
 // ## Criação dos Schemas
 var Schema = mongoose.Schema; 
 var Float = require('mongoose-float').loadType(mongoose);
+var ObjectId = mongoose.Schema.Types.ObjectId;
 
 var hostsSchema = new Schema({
   title: {type: String, required: true},
@@ -79,7 +80,6 @@ var hostsSchema = new Schema({
       number: {type: Number, required: true},
       zipCode: {type: Number, required: true},
       complement: String,
-      unique: true
   },
   description: String,
   items: [{}], 
@@ -98,7 +98,8 @@ var usersSchema = new Schema({
   }, {collection: 'users'});
 
 var statesSchema = new Schema({
-    name: {type: String, required: true, unique: true}
+    name: {type: String, required: true, unique: true},
+    initials: {type: String, required: true, unique: true}
   }, {collection: 'states'});
 
 var citiesSchema = new Schema({
@@ -148,7 +149,7 @@ app.post('/states', (req, res) =>{
 	let infoRaw= req.body.data
   console.log(infoRaw)
 
-	let dados ={
+	let data ={
 		info:infoRaw  // Montando estrutura que sera salva
 	}
 		var statesDb = mongoose.model('statesDb',  statesSchema);
@@ -156,7 +157,8 @@ app.post('/states', (req, res) =>{
 		statesDb
 				.findOneAndUpdate({ "name": infoRaw.name },
 					{  $set: {
-								'name': dados.info.name			 
+                'name': data.info.name,
+                'initials': data.info.initials	 
 					   }
 					},
 					{ upsert: true },

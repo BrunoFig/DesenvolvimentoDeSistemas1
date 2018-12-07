@@ -10,8 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "mongoose": "^5.3.15",
-    "request-promise": "^4.2.2"
+    "mongoose-float": "^1.0.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "safe-buffer": "^5.1.2"
   }
 }
