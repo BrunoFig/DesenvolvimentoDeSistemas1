@@ -162,7 +162,6 @@ statesDb.find({})
 		  
 		  console.log("#### List of All States  #####")
 			   console.log(statesConsultObj)
-			
 			res.send(statesConsultObj) 
 		  console.log('#### List of All States  #####')
   });
@@ -503,5 +502,152 @@ app.delete('/hosts/:id', (req, res) =>{
 			
 			res.send(hostsDeleteObj) 
 		  console.log('####  Host Deleted  #####')
+	});
+});
+
+app.delete('/users/:id', (req, res) =>{
+	let infoRaw= req.params.id;
+  console.log(infoRaw)
+
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+	var usersDb = mongoose.model('usersDb', usersSchema);
+	usersDb.findOneAndDelete({"_id": infoRaw})
+		.then(function(usersDeleteObj) { 
+		  
+		  console.log("####  Users Deleted  #####")
+			   console.log(usersDeleteObj)
+			
+			res.send(usersDeleteObj) 
+		  console.log('####  Users Deleted  #####')
+	});
+});
+
+app.delete('/states/:id', (req, res) =>{
+	let infoRaw= req.params.id;
+  console.log(infoRaw)
+
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+	var statesDb = mongoose.model('statesDb', statesSchema);
+	statesDb.findOneAndDelete({"_id": infoRaw})
+		.then(function(statesDeleteObj) { 
+		  
+		  console.log("####  States Deleted  #####")
+			   console.log(statesDeleteObj)
+			
+			res.send(statesDeleteObj) 
+		  console.log('####  States Deleted  #####')
+	});
+});
+
+app.delete('/cities/:id', (req, res) =>{
+	let infoRaw= req.params.id;
+  console.log(infoRaw)
+
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+	var citiesDb = mongoose.model('citiesDb', citiesSchema);
+	citiesDb.findOneAndDelete({"_id": infoRaw})
+		.then(function(citiesDeleteObj) { 
+		  
+		  console.log("####  Cities Deleted  #####")
+			   console.log(citiesDeleteObj)
+			
+			res.send(citiesDeleteObj) 
+		  console.log('####  Cities Deleted  #####')
+	});
+});
+
+app.delete('/items/:id', (req, res) =>{
+	let infoRaw= req.params.id;
+  console.log(infoRaw)
+
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+	var itemsDb = mongoose.model('itemsDb', itemsSchema);
+	itemsDb.findOneAndDelete({"_id": infoRaw})
+		.then(function(itemsDeleteObj) { 
+		  
+		  console.log("####  Items Deleted  #####")
+			   console.log(itemsDeleteObj)
+			
+			res.send(itemsDeleteObj) 
+		  console.log('####  Items Deleted  #####')
+	});
+});
+
+app.delete('/hostsTypes/:id', (req, res) =>{
+	let infoRaw= req.params.id;
+  console.log(infoRaw)
+
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+	var hostsTypesDb = mongoose.model('hostsTypesDb', hostsTypesSchema);
+	hostsTypesDb.findOneAndDelete({"_id": infoRaw})
+		.then(function(hostsTypesDeleteObj) { 
+		  
+		  console.log("####  HostTypes Deleted  #####")
+			   console.log(hostsTypesDeleteObj)
+			
+			res.send(hostsTypesDeleteObj) 
+		  console.log('####  HostTypes Deleted  #####')
+	});
+});
+
+app.delete('/categories/:id', (req, res) =>{
+	let infoRaw= req.params.id;
+  console.log(infoRaw)
+
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+	var categoriesDb = mongoose.model('categoriesDb', categoriesSchema);
+	categoriesDb.findOneAndDelete({"_id": infoRaw})
+		.then(function(categoriesDeleteObj) { 
+		  
+		  console.log("####  Categories Deleted  #####")
+			   console.log(categoriesDeleteObj)
+			
+			res.send(categoriesDeleteObj) 
+		  console.log('####  Categories Deleted  #####')
+	});
+});
+
+app.delete('/reservations/:id', (req, res) =>{
+	let infoRaw= req.params.id;
+  console.log(infoRaw)
+
+	// console.log(req.body)
+  var consult = {
+	context: req.body
+  }
+ console.log(consult)
+	var reservationsDb = mongoose.model('reservationsDb', reservationsSchema);
+	reservationsDb.findOneAndDelete({"_id": infoRaw})
+		.then(function(reservationsDeleteObj) { 
+		  
+		  console.log("####  Reservations Deleted  #####")
+			   console.log(reservationsDeleteObj)
+			
+			res.send(reservationsDeleteObj) 
+		  console.log('####  Reservations Deleted  #####')
 	});
 });
