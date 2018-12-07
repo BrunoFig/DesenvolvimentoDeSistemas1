@@ -1,0 +1,32 @@
+{
+  "name": "desenvolvimentodesistemas1",
+  "version": "1.0.0",
+  "description": "Trabalho da disciplina de Metodologia de Desenvolvimento de Sistemas 1",
+  "main": "server.js",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-mocks": "^1.7.5",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "jest": "^23.6.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoFig/DesenvolvimentoDeSistemas1.git"
+  },
+  "author": "Bruno Figueiredo and Alexandre Dutra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrunoFig/DesenvolvimentoDeSistemas1/issues"
+  },
+  "homepage": "https://github.com/BrunoFig/DesenvolvimentoDeSistemas1#readme"
+}

@@ -1,0 +1,38 @@
+<div ng-controller="hostCtrl" class="jumbotron">
+        <h3>Table</h3>
+        <table class="table-striped">
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Cidade</th>
+            </tr>
+            <tr ng-repeat="host in hosts">
+                <td><input type="checkbox" ng-model="host.selected"/></td>
+                <td>{{host.name}}</td>
+                <td>{{host.city}}</td>
+                <td>Object: {{host}}</td>
+            </tr>
+        </table>
+        <h3>Form</h3>
+        <form name="hostForm">
+            <div class="alert alert-danger" ng-show="hostForm.name.$invalid && hostForm.name.$dirty">
+                Por favor, digite um Nome.
+            </div>
+            <div class="alert alert-danger" ng-show="hostForm.city.$invalid && hostForm.city.$dirty">
+                Por favor, selecione uma Cidade.
+            </div>
+            <div>
+                <label>Nome: </label>
+                <input type="text" ng-model="newHost.name" ng-required="true" name="name" placeholder="Nome" class="form-control"/>
+            </div>
+
+            <div>
+                <select ng-model="newHost.city" ng-options="city.id as city.name for city in cities" ng-required="true" name="city" class="form-control">
+                    <option value="">Selecione uma Cidade</option>
+                </select>
+            </div>
+        </form>
+        <button ng-click="addHost(newHost)" ng-disabled="hostForm.$invalid" class="btn btn-primary">Adicionar Host</button>
+        <button ng-click="deleteHost(hosts)" ng-disabled="isHostsSelected(hosts)" class="btn btn-danger">Deletar Host</button>
+        {{newHost}}
+    </div>
