@@ -10,7 +10,7 @@ angular.module('ChegaMais.hostType', ['ngRoute'])
         // Controller Local Functions
         //==============================
         var loadHostTypes = function(){
-            subscribeBackendService.getAllHostTypes().then(function(response){
+            subscribeBackendService.getAllHostsTypes().then(function(response){
                 $scope.hostTypes = response;
             });
         };
@@ -18,7 +18,9 @@ angular.module('ChegaMais.hostType', ['ngRoute'])
         // Controller Scope Functions
         //==============================
         $scope.addHostType = function(newHostType){
-            $scope.hostTypes.push(angular.copy(newHostType));
+            subscribeBackendService.createHostType(newHostType).then(function(response){
+                loadHostTypes();
+            });
 
             delete $scope.newHostType;
             $scope.hostTypeForm.$setPristine();

@@ -18,16 +18,25 @@ angular.module('ChegaMais.state', ['ngRoute'])
         // Controller Scope Functions
         //==============================
         $scope.addState = function(newState){
-            $scope.states.push(angular.copy(newState));
+            subscribeBackendService.createState(newState).then(function(response){
+                loadStates();
+            });
 
             delete $scope.newState;
             $scope.stateForm.$setPristine();
         };
         $scope.deleteState = function(states){
-            $scope.states = states.filter(function (state) {
-                if (!state.selected)
+            var toDelete = states.filter(function (state) {
+                if (state.selected)
                     return state;
             });
+
+            toDelete.forEach(element => {
+                subscribeBackendService.deleteState(element._id).then(function(response){
+                });
+            });
+
+            loadStates();
         };
         $scope.isStatesSelected = function(states){
             return !states.some(function (state){

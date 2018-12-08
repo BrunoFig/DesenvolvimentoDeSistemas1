@@ -8,6 +8,7 @@ angular.module("ChegaMais", [
     "ChegaMais.category",
     "ChegaMais.city",
     "ChegaMais.hostType",
-    "ChegaMais.items",
+    "ChegaMais.item",
+    "ChegaMais.reservation",
     "ChegaMais.backendService"
 ]);

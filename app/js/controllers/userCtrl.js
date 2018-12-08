@@ -18,7 +18,9 @@ angular.module('ChegaMais.user', ['ngRoute'])
         // Controller Scope Functions
         //==============================
         $scope.addUser = function(newUser){
-            $scope.users.push(angular.copy(newUser));
+            subscribeBackendService.createUser(newUser).then(function(response){
+                loadUsers();
+            });
 
             delete $scope.newUser;
             $scope.userForm.$setPristine();

@@ -1,13 +1,15 @@
 <div ng-controller="stateCtrl" class="jumbotron">
         <h3>Table</h3>
-        <table class="table-striped">
+        <table class="table table-striped table-bordered">
             <tr>
                 <th></th>
+                <th>Id</th>
                 <th>Nome</th>
                 <th>Sigla</th>
             </tr>
             <tr ng-repeat="state in states">
                 <td><input type="checkbox" ng-model="state.selected"/></td>
+                <td>{{state._id}}</td>
                 <td>{{state.name}}</td>
                 <td>{{state.initials}}</td>
             </tr>

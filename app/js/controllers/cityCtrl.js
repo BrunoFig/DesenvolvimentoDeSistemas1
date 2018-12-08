@@ -24,7 +24,9 @@ angular.module('ChegaMais.city', ['ngRoute'])
         // Controller Scope Functions
         //==============================
         $scope.addCity = function(newCity){
-            $scope.cities.push(angular.copy(newCity));
+            subscribeBackendService.createCity(newCity).then(function(response){
+                loadCities();
+            });
 
             delete $scope.newCity;
             $scope.cityForm.$setPristine();

@@ -18,7 +18,9 @@ angular.module('ChegaMais.category', ['ngRoute'])
         // Controller Scope Functions
         //==============================
         $scope.addCategory = function(newCategory){
-            $scope.categories.push(angular.copy(newCategory));
+            subscribeBackendService.createCategory(newCategory).then(function(response){
+                loadCategories();
+            });
 
             delete $scope.newCategory;
             $scope.categoryForm.$setPristine();

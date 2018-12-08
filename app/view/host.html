@@ -1,6 +1,6 @@
 <div ng-controller="hostCtrl" class="jumbotron">
         <h3>Table</h3>
-        <table class="table-striped">
+        <table class="table table-striped table-bordered">
             <tr>
                 <th></th>
                 <th>Nome</th>
@@ -17,8 +17,9 @@
             </tr>
             <tr ng-repeat="host in hosts">
                 <td><input type="checkbox" ng-model="host.selected"/></td>
-                <td>{{host.name}}</td>
+                <td>{{host.title}}</td>
                 <td>{{host.category}}</td>
+                <td>{{host.owner}}</td>
                 <td>{{host.description}}</td>
                 <td>{{host.adress.street}}</td>
                 <td>{{host.adress.number}}</td>
@@ -26,12 +27,14 @@
                 <td>{{host.adress.city}}</td>
                 <td>{{host.adress.state}}</td>
                 <td>{{host.adress.zipCode}}</td>
-                <td><p ng-repeat="item in hosts.items" >{{item.quantity}} {{item.name}}</p></td>
+                <td>
+                    <div ng-repeat="item in host.items">- {{item.quantity}} {{item.name}}</div>
+                </td>
             </tr>
         </table>
         <h3>Form</h3>
         <form name="hostForm">
-            <div class="alert alert-danger" ng-show="hostForm.name.$invalid && hostForm.name.$dirty">
+            <div class="alert alert-danger" ng-show="hostForm.title.$invalid && hostForm.title.$dirty">
                 Por favor, digite um Nome.
             </div>
             <div class="alert alert-danger" ng-show="hostForm.category.$invalid && hostForm.category.$dirty">
@@ -57,7 +60,7 @@
             <!-- ============================= -->
             <div>
                 <label>Nome: </label>
-                <input type="text" ng-model="newHost.name" ng-required="true" name="name" placeholder="Nome" class="form-control"/>
+                <input type="text" ng-model="newHost.title" ng-required="true" name="title" placeholder="Nome" class="form-control"/>
             </div>
             <div>
                 <label>Categoria</label>

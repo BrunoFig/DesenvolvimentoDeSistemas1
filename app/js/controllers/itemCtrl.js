@@ -1,36 +1,38 @@
 'use strict';
 
-angular.module('ChegaMais.items', ['ngRoute'])
-    .controller('itemsCtrl', function($scope, subscribeBackendService) {
+angular.module('ChegaMais.item', ['ngRoute'])
+    .controller('itemCtrl', function($scope, subscribeBackendService) {
 
         // Scope Variables
         //==============================
-        $scope.itemss = [];
+        $scope.items = [];
 
         // Controller Local Functions
         //==============================
         var loadItems = function(){
             subscribeBackendService.getAllItems().then(function(response){
-                $scope.itemss = response;
+                $scope.items = response;
             });
         };
 
         // Controller Scope Functions
         //==============================
         $scope.addItem = function(newItem){
-            $scope.itemss.push(angular.copy(newItem));
+            subscribeBackendService.createItem(newItem).then(function(response){
+                loadItems();
+            });
 
             delete $scope.newItem;
             $scope.itemsForm.$setPristine();
         };
-        $scope.deleteItem = function(itemss){
-            $scope.itemss = itemss.filter(function (items) {
+        $scope.deleteItem = function(items){
+            $scope.items = items.filter(function (items) {
                 if (!items.selected)
                     return items;
             });
         };
-        $scope.isItemsSelected = function(itemss){
-            return !itemss.some(function (items){
+        $scope.isItemsSelected = function(items){
+            return !items.some(function (items){
                 return items.selected;
             });
         };
