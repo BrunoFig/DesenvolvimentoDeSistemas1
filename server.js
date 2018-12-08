@@ -43,10 +43,14 @@ app.get('/backend/cities', function(req, res) {
 app.get('/', function (req, res) {
     res.sendfile('app/index.html');
  })
+ app.get('/home', function (req, res) {
+    res.sendfile('app/view/home.html');
+ })
+
 
 // Serve
 //=================
-var port = process.env.PORT|| 3000;
+var port = process.env.PORT|| 8080;
 // listen (start app with node server.js)
 app.listen(port);
 console.log("App listening on port " + port);

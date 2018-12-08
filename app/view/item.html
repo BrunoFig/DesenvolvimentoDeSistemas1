@@ -1,0 +1,32 @@
+<div ng-controller="itemCtrl" class="jumbotron">
+        <h3>Table</h3>
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th></th>
+                <th>Id</th>
+                <th>Nome</th>
+            </tr>
+            <tr ng-repeat="item in items">
+                <td><input type="checkbox" ng-model="item.selected"/></td>
+                <td>{{item._id}}</td>
+                <td>{{item.name}}</td>
+            </tr>
+        </table>
+        <h3>Form</h3>
+        <form name="itemForm">
+            <div class="alert alert-danger" ng-show="itemForm.name.$invalid && itemForm.name.$dirty">
+                Por favor, digite um Nome.
+            </div>
+
+            <!-- INPUTs -->
+            <!-- ============================= -->
+            <div>
+                <label>Nome: </label>
+                <input type="text" ng-model="newItem.name" ng-required="true" name="name" placeholder="Nome" class="form-control"/>
+            </div>
+            
+        </form>
+        <button ng-click="addItem(newItem)" ng-disabled="itemForm.$invalid" class="btn btn-primary">Adicionar Item</button>
+        <button ng-click="deleteItem(items)" ng-disabled="isItemsSelected(items)" class="btn btn-danger">Deletar Item</button>
+        {{newItem}}
+    </div>

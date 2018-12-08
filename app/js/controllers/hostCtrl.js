@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ChegaMais.host', [])
+angular.module('ChegaMais.host', ['ngRoute'])
     .controller('hostCtrl', function($scope, subscribeBackendService) {
 
         // Scope Variables
@@ -24,16 +24,25 @@ angular.module('ChegaMais.host', [])
         // Controller Scope Functions
         //==============================
         $scope.addHost = function(newHost){
-            $scope.hosts.push(angular.copy(newHost));
+            subscribeBackendService.createHost(newHost).then(function(response){
+                loadCities();
+            });
 
             delete $scope.newHost;
             $scope.hostForm.$setPristine();
         };
         $scope.deleteHost = function(hosts){
-            $scope.hosts = hosts.filter(function (host) {
-                if (!host.selected)
+            var toDelete = hosts.filter(function (host) {
+                if (host.selected)
                     return host;
             });
+
+            toDelete.forEach(element => {
+                subscribeBackendService.deleteHost(element._id).then(function(response){
+                });
+            });
+
+            loadCities();
         };
         $scope.isHostsSelected = function(hosts){
             return !hosts.some(function (host){
