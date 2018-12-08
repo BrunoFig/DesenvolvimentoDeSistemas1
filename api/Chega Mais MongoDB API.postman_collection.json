@@ -1,0 +1,832 @@
+{
+	"info": {
+		"_postman_id": "bee9c38b-7c1b-46f8-8c55-689fa0a50f96",
+		"name": "Chega Mais MongoDB API",
+		"description": "Chamadas HTTP da API de acesso ao banco de dados da aplicação Chega Mais.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Categorias",
+			"item": [
+				{
+					"name": "Recupera Todas Categorias",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/states",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"states"
+							]
+						},
+						"description": "Recupera o registro de todos os categorias no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Criação e Atualização de Categorias",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\":{\n\t\t\"name\":\"Casa - República\",\n\t\t\"description\":\"A residência disponível é uma casa de estudantes.\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories"
+							]
+						},
+						"description": "Cria e/ou atualiza uma categoria no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta Categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/states/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"states",
+								"id"
+							]
+						},
+						"description": "Deleta o registro da categoria especificada no banco de dados."
+					},
+					"response": []
+				}
+			],
+			"description": "Todas as chamadas HTTP da API de acesso ao banco de dados da aplicação Chega Mais relacionadas com a Coleção de categorias."
+		},
+		{
+			"name": "Cidades",
+			"item": [
+				{
+					"name": "Recupera Todas as Cidades",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cities"
+							]
+						},
+						"description": "Recupera o registro de todas as cidades no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Criação e Atualização de Cidades",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\":{\n\t\t\"name\":\"São Carlos\",\n\t\t\"state\": \"São Paulo\",\n\t\t\"stateInitials\": \"SP\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cities"
+							]
+						},
+						"description": "Cria e/ou atualiza uma cidade no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta Cidade",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/cities/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cities",
+								"id"
+							]
+						},
+						"description": "Deleta o registro da cidade especificada no banco de dados."
+					},
+					"response": []
+				}
+			],
+			"description": "Todas as chamadas HTTP da API de acesso ao banco de dados da aplicação Chega Mais relacionadas com a Coleção de cidades."
+		},
+		{
+			"name": "Estados",
+			"item": [
+				{
+					"name": "Recupera Todos os Estados",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/states",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"states"
+							]
+						},
+						"description": "Recupera o registro de todos os estados no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Criação e Atualização de Estados",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\":{\n\t\t\"name\":\"Rio de Janeiro\",\n\t\t\"initials\":\"RJ\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/states",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"states"
+							]
+						},
+						"description": "Cria e/ou atualiza um estado no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta Estado",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/states/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"states",
+								"id"
+							]
+						},
+						"description": "Deleta o registro do estado especificado no banco de dados."
+					},
+					"response": []
+				}
+			],
+			"description": "\u0001Todas as chamadas HTTP da API de acesso ao banco de dados da aplicação Chega Mais relacionadas com a Coleção de estados."
+		},
+		{
+			"name": "Hospedeiros",
+			"item": [
+				{
+					"name": "Recupera Todos os Hospedeiros",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/hosts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hosts"
+							]
+						},
+						"description": "Recupera o registro de todos os hospedeiros no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Cria e Atualiza Hospedeiros",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\":{\n\t\t\"title\":\"Dauhma\",\n\t\t\"category\": \"Casa - República\",\n\t\t\"owner\": \"5c0a19872343b29eeda2d1d0\",\n\t\t\"adress\": {\n\t\t\t\"city\":\"São Carlos\",\n\t\t\t\"complement\": \"Sem complemento.\",\n\t\t\t\"number\": 205,\n\t\t\t\"state\": \"São Paulo\",\n\t\t\t\"street\": \"Rua da Rep\",\n\t\t\t\"zipCode\": 13599133\n\t\t\t\n\t\t},\n\t\t\"description\": \"República Dauhma de São Carlos.\",\n\t\t\"items\": [\n\t\t\t{\n\t\t\t\t\"name\":\"Banheiro\",\n\t\t\t\t\"quantity\": 3\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\"name\":\"Televisão\",\n\t\t\t\t\"quantity\": 1\t\n\t\t\t\t},\n\t\t\t{\n\t\t\t\t\"name\":\"PlayStation 4\",\n\t\t\t\t\"quantity\": 1\t\n\t\t\t\t}]\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/hosts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hosts"
+							]
+						},
+						"description": "Cria e/ou atualiza uma hospedeiro no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta um Hospedeiro",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/hosts/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hosts",
+								"id"
+							]
+						},
+						"description": "Deleta o registro do hospedeiro especificado no banco de dados."
+					},
+					"response": []
+				}
+			],
+			"description": "Todas as chamadas HTTP da API de acesso ao banco de dados da aplicação Chega Mais relacionadas com a Coleção de hospedeiros."
+		},
+		{
+			"name": "Itens",
+			"item": [
+				{
+					"name": "Recupera Todos os Itens",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"items"
+							]
+						},
+						"description": "Recupera o registro de todos os itens no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Criação e Atualização de Itens",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\":{\n\t\t\"name\":\"Banheiro\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"items"
+							]
+						},
+						"description": "Cria e/ou atualiza um item no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta Item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/items/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"items",
+								"id"
+							]
+						},
+						"description": "Deleta o registro do item especificado no banco de dados."
+					},
+					"response": []
+				}
+			],
+			"description": "Todas as chamadas HTTP da API de acesso ao banco de dados da aplicação Chega Mais relacionadas com a Coleção de itens."
+		},
+		{
+			"name": "Reservas",
+			"item": [
+				{
+					"name": "Recupera Todas as Reservas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reservations"
+							]
+						},
+						"description": "Recupera o registro de todas as reservas no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Criação e Atualização de Reservas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\":{\n\t\t\"host\":\"5c0a19872343b29eeda2d1d0\",\n\t\t\"daysAvailable\": [\n\t\t\t{\n\t\t\t\t\"date\": \"2018-12-07\",\n\t\t\t\t\"guestNumber\": 3,\n\t\t\t\t\"dayPrice\": 25.50,\n\t\t\t\t\"hostType\": \"Cama de Solteiro\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"date\": \"2018-12-08\",\n\t\t\t\t\"guestNumber\": 3,\n\t\t\t\t\"dayPrice\": 25.50,\n\t\t\t\t\"hostType\": \"Cama de Solteiro\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"date\": \"2018-12-09\",\n\t\t\t\t\"guestNumber\": 3,\n\t\t\t\t\"dayPrice\": 25.50,\n\t\t\t\t\"hostType\": \"Cama de Solteiro\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"date\": \"2018-12-10\",\n\t\t\t\t\"guestNumber\": 3,\n\t\t\t\t\"dayPrice\": 25.50,\n\t\t\t\t\"hostType\": \"Cama de Solteiro\"\n\t\t\t}],\n\t\t\"daysUnavailable\": [],\n\t\t\"description\": \"Vagas na República Dauhma.\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reservations"
+							]
+						},
+						"description": "Cria e/ou atualiza uma reserva no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta Reserva",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/reservations/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reservations",
+								"id"
+							]
+						},
+						"description": "Deleta o registro da reserva especificado no banco de dados."
+					},
+					"response": []
+				}
+			],
+			"description": "Todas as chamadas HTTP da API de acesso ao banco de dados da aplicação Chega Mais relacionadas com a Coleção de reservas."
+		},
+		{
+			"name": "Tipos de Hospedagem",
+			"item": [
+				{
+					"name": "Recupera Todos os Tipos de Hospedagem",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/hostTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hostTypes"
+							]
+						},
+						"description": "Recupera o registro de todos os tipos de hospedagem no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Criação e Atualização de Tipos de Hospedagem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\":{\n\t\t\"name\":\"Cama de Solteiro\",\n\t\t\"description\": \"O hospedeiro irá disponibilizar uma cama de solteiro para o hospede\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/hostTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hostTypes"
+							]
+						},
+						"description": "Cria e/ou atualiza um tipo de hospedagem no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta Tipo de Hospedagem",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/hostTypes/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hostTypes",
+								"id"
+							]
+						},
+						"description": "Deleta o registro do tipo de hospedagem especificado no banco de dados."
+					},
+					"response": []
+				}
+			],
+			"description": "Todas as chamadas HTTP da API de acesso ao banco de dados da aplicação Chega Mais relacionadas com a Coleção de tipos de hospedagem."
+		},
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Recupera Todos os Usuários",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						},
+						"description": "Recupera o registro de todos os usuários no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Criação e Atualização de Usuários",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\":{\n\t\t\"email\":\"bruno.figueiredo@email.com\",\n\t\t\"firstName\": \"Bruno\",\n\t\t\"lastName\": \"Figueiredo\",\n\t\t\"password\": \"minhaSenha\",\n\t\t\"dateBirth\": \"1994-12-17\",\n\t\t\"phone\": 11912344321,\n\t\t\"description\": \"Aluno na Faculdade Federal de São Carlos.\",\n\t\t\"sex\": \"Masculino\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						},
+						"description": "Cria e/ou atualiza um usuário no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta Usuário",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"id"
+							]
+						},
+						"description": "Deleta o registro do usuário especificado no banco de dados."
+					},
+					"response": []
+				}
+			],
+			"description": "Todas as chamadas HTTP da API de acesso ao banco de dados da aplicação Chega Mais relacionadas com a Coleção de usuários."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9552f1fe-2640-48c2-aacf-4002bd6293b8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9e314d07-75a1-435f-b2d7-1b7d7775cd1a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
