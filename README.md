@@ -82,6 +82,8 @@ Para testar a aplicação localmente é necessário executar dois projetos simul
     npm install
     npm start
 
+Note que o frontend possui vários arquivos HTML mas não tem um `Route`, portanto para se testar os outros arquivos é necessário mudar a referência no `index.html` (não foram implementadas todas as funcionalidades dessas páginas).
+
 <br><br>
 
 ## Links Importantes
